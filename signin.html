@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Shoppe</title>
+  <link rel="stylesheet" href="assets/Login.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-left">
+      <div class="logo-box">
+        <img style="height: 400px; width: 400px;" src="styles/Logo.png" alt="Logo" />
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="card">
+        <h2> CelebrityLogin </h2>
+        <form action="" method="POST">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" onclick="handleLogin()">Login</button>
+        </form>
+        <!-- Error message placeholder -->
+        <p class="error" style="display: none;">Invalid details</p>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function handleLogin() {
+    // Simulate successful login
+    window.location.href = "index.html";
+  }
+</script>
+</html>
