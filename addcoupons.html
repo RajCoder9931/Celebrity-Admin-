@@ -165,6 +165,19 @@
 <input type="text" class="form-control">
 </div>
 </div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Upload Banner</label>
+    <div class="image-upload">
+      <input type="file" class="form-control" accept="image/*">
+      <div class="image-uploads mt-2 text-center border rounded p-3" style="cursor: pointer;">
+        <img src="assets/img/icons/upload.svg" alt="upload" width="40">
+        <h6 class="mt-2">Drag & Drop or Click to Upload Banner</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="col-lg-6 col-sm-6 col-md-6 col-xl-6">
 <div class="form-group">
 <label>Start Date</label>
@@ -191,6 +204,22 @@
 </div>
 </div>
 </div>
+<script>
+  $(document).ready(function () {
+    $('input[type="file"]').on('change', function (e) {
+      const [file] = this.files;
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          $('.image-uploads').html(`
+            <img src="${e.target.result}" alt="Banner" class="img-fluid rounded" style="max-height: 200px;">
+          `);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+</script>
 
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
